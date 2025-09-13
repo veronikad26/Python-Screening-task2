@@ -10,6 +10,17 @@ Below is a concise explanation of the design choices behind the prompt, how it p
 
 ## Design choice
 
+---
+
+## 🔄 Workflow Flowchart
+
+```mermaid
+flowchart LR
+    A[Empathy & Restatement] --> B[Diagnosis: Likely Causes]
+    B --> C[Debugging Steps / Experiments]
+    C --> D[Hints: Concept → Localize → Targeted Experiment]
+    D --> E[No Solution Given]
+
 1. **Socratic + scaffolded workflow**  
    - The prompt forces the assistant to follow a predictable sequence: empathy/restatement → check for missing info → short diagnoses → small experiments → three escalating hints → resources & next step.  
    - **Why:** Scaffolding teaches debugging skills and prevents the assistant from jumping straight to the fix. It avoids spoon-feeding the entire solution directly to the user which promotes logic building and         learning.  
